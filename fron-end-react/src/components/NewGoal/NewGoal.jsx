@@ -9,7 +9,6 @@ const NewGoal = props =>{
             id: Math.random().toString(),
             text:value
         }
-        console.log(newGoal,'newGoal');
         props.onAddGoal(newGoal)
         setValue('')
     }

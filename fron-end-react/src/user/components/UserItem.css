@@ -1,0 +1,29 @@
+.user-item {
+    margin: 1rem;
+    width: calc(45% -2rem);
+    min-width: 17.5rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.user-item a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    background: #292929;
+}
+.user-item__content{
+    width: 400px;
+}
+.user-item__image{
+    width: 100px;
+    height: 100px;
+    padding: 0 8px 0 4px;
+}
+.user-item a:hover,
+.user-item a:active{
+    background: #ffd900;
+}

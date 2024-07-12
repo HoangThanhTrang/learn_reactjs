@@ -1,23 +1,24 @@
 import './App.css';
-import GoalList from './components/GoalList/GoalList'
-import NewGoal from './components/NewGoal/NewGoal';
-import React,{useState} from 'react';
+import React from 'react';
+import {BrowserRouter as Router,Route,Routes  } from 'react-router-dom'
+import User from './user/pages/User';
+import NewPlace from './places/pages/NewPlace';
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
-function App() {
-  const [courseGoal,setCourseGoal]  = useState([
-    {id:1,text:'Finish the course'},
-    {id:2,text:'Learn all about the Course Main Topic'},
-    {id:3,text:'Help ohter students in the Course Q&A'}
-  ])
-  const addNewGoalHandler = newGoal =>{
-    setCourseGoal(courseGoal.concat(newGoal))
-  }
+const App = () =>{
   return (
-    <div className="App">
-      <NewGoal onAddGoal={addNewGoalHandler} />
-     <GoalList goals= {courseGoal}/>
-    </div>
-  );
+    <Router>  
+      <MainNavigation />
+      <main>
+        <Routes>
+          <Route path='/' element={<User />}  />
+        </Routes>
+        <Routes>
+          <Route path='/place/new' element={<NewPlace />} />
+        </Routes>
+        {/* <Navigate to='/' /> */}
+      </main>
+    </Router>
+  )
 }
-
 export default App;
